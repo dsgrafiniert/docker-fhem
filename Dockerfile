@@ -23,7 +23,7 @@ RUN curl -L http://cpanmin.us | perl - App::cpanminus && \
  cpanm Date::Parse && \
  cpanm SOAP::Lite && \
  cpanm JSON::XS && \
- cpanm IMAGER::COLOR
+ cpanm Imager::Color
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
