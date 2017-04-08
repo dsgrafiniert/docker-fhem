@@ -1,4 +1,4 @@
-FROM avastsoftware/alpine-perl
+FROM avastsoftware/alpine-perl-extended
 
 MAINTAINER Dominik Schoen
 
@@ -13,8 +13,7 @@ RUN apk add --update perl-device-serialport \
         && rm -rf /var/cache/apk/*
         
 # install perl modules for xmltv
-RUN curl -L http://cpanmin.us | perl - App::cpanminus && \
- cpanm LWP::Simple && \
+RUN cpanm LWP::Simple && \
  cpanm MIME::Base64 && \
  cpanm HTTP::Request && \
  cpnam LWP::UserAgent && \
