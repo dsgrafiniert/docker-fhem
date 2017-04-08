@@ -22,7 +22,8 @@ RUN curl -L http://cpanmin.us | perl - App::cpanminus && \
  cpanm Digest::MD5 && \
  cpanm Date::Parse && \
  cpanm SOAP::Lite && \
- cpanm JSON::XS
+ cpanm JSON::XS && \
+ cpanm IMAGER::COLOR
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
