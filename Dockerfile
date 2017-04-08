@@ -10,9 +10,6 @@ RUN apk add --update perl-device-serialport \
                      perl-xml-simple \
                      perl-json \
                      perl-net-telnet \
-                     perl-cpanel-json-xs \
-                     perl-soap-lite \
-                      
         && rm -rf /var/cache/apk/*
         
 # install perl modules for xmltv
@@ -23,7 +20,9 @@ RUN curl -L http://cpanmin.us | perl - App::cpanminus && \
  cpnam LWP::UserAgent && \
  cpanm HTML::Parse && \
  cpanm Digest::MD5 && \
- cpanm Date::Parse
+ cpanm Date::Parse && \
+ cpanm SOAP::Lite && \
+ cpanm JSON::XS
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
