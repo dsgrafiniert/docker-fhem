@@ -13,16 +13,16 @@ RUN apk add --update perl-device-serialport \
         && rm -rf /var/cache/apk/*
         
 # install perl modules for xmltv
-RUN cpanm LWP::Simple && \
- cpanm MIME::Base64 && \
- cpanm HTTP::Request && \
- cpnam LWP::UserAgent && \
- cpanm HTML::Parse && \
- cpanm Digest::MD5 && \
- cpanm Date::Parse && \
- cpanm SOAP::Lite && \
- cpanm JSON::XS && \
- cpanm Imager::Color
+RUN cpanm LWP::Simple
+RUN cpanm MIME::Base64
+RUN cpanm HTTP::Request
+RUN cpnam LWP::UserAgent
+RUN cpanm HTML::Parse
+RUN cpanm Digest::MD5
+RUN cpanm Date::Parse
+RUN cpanm SOAP::Lite
+RUN cpanm JSON::XS
+RUN cpanm Imager::Color
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
