@@ -2,7 +2,7 @@ FROM avastsoftware/alpine-perl
 
 MAINTAINER Dominik Schoen
 
-ENV FHEM_VERSION 5.7
+ENV FHEM_VERSION 5.8
 
 RUN apk add --update perl-device-serialport \
                      perl-io-socket-ssl \
