@@ -16,6 +16,7 @@ RUN apk add --update perl-device-serialport \
 RUN cpanm LWP::Simple
 RUN cpanm MIME::Base64
 RUN cpanm HTTP::Request
+RUN cpanm HTML::TableExtract
 RUN cpanm HTML::Parse
 RUN cpanm Digest::MD5
 RUN cpanm Date::Parse
