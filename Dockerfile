@@ -4,7 +4,8 @@ MAINTAINER Dominik Schoen
 
 ENV FHEM_VERSION 5.8
 
-RUN apk add --update perl-device-serialport \
+RUN apk add --update avrdude \
+                     perl-device-serialport \
                      perl-io-socket-ssl \
                      perl-libwww \
                      perl-xml-simple \
