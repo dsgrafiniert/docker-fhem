@@ -3,7 +3,9 @@ FROM avastsoftware/alpine-perl-extended
 MAINTAINER Dominik Schoen
 
 ENV FHEM_VERSION 5.8
-
+RUN echo "http://1ot.jp/alpine-iot" >> /etc/apk/repositories
+RUN wget -P /etc/apk/keys http://1ot.jp/alpine-iot/keys/takesako@namazu.org-587ad2bb.rsa.pub
+RUN apk update
 RUN apk add --update avrdude \
                      perl-device-serialport \
                      perl-io-socket-ssl \
