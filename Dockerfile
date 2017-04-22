@@ -30,8 +30,8 @@ RUN cpanm Imager::Color
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
     adduser -D -G fhem -h /opt/fhem -u 1000 fhem
-    
-RUN usermod -a -G dialout fhem
+
+RUN adduser fhem dialout
 
 VOLUME /opt/fhem
 
