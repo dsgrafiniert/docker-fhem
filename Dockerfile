@@ -13,6 +13,8 @@ RUN apk add --update avrdude \
                      perl-xml-simple \
                      perl-json \
                      perl-net-telnet \
+                     python \
+                     wget \
         && rm -rf /var/cache/apk/*
         
 # install perl modules for xmltv
@@ -43,6 +45,9 @@ EXPOSE 8083 8084 8085 7072
 
 COPY ./fhem.sh /usr/local/bin/fhem.sh
 RUN chmod a+x /usr/local/bin/fhem.sh
+
+RUN wget -O /usr/local/bin/speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+RUN chmod +x /usr/local/bin/speedtest-cli
 
 WORKDIR /opt/fhem
 
