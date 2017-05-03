@@ -25,13 +25,12 @@ RUN apk add --update avrdude \
 
 RUN mkdir -p /opt 
 RUN cd /opt
-RUN wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz 
-RUN tar xzf libiconv-1.14.tar.gz 
-RUN cd libiconv-1.14 
-RUN sed -i 's/_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");/#if HAVE_RAW_DECL_GETS\n_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");\n#endif/g' srclib/stdio.in.h
+RUN wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.15.tar.gz 
+RUN tar xzf libiconv-1.15.tar.gz 
+RUN cd libiconv-1.15 
 RUN ./configure --prefix=/usr/local 
 RUN make && make install 
-RUN cd.. && rm -rf libiconv-1.14 && rm libiconv-1.14.tar.gz
+RUN cd.. && rm -rf libiconv-1.15 && rm libiconv-1.15.tar.gz
         
 # install perl modules for xmltv
 RUN cpanm LWP::Simple
