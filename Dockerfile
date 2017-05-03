@@ -50,6 +50,9 @@ RUN chmod a+x /usr/local/bin/fhem.sh
 RUN wget -O /usr/local/bin/speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 RUN chmod +x /usr/local/bin/speedtest-cli
 
+RUN wget -O /usr/local/lib/Text-Iconv-1.7.tar.gz http://search.cpan.org/CPAN/authors/id/M/MP/MPIOTR/Text-Iconv-1.7.tar.gz
+RUN cd /usr/local/lib && tar zxvf Text-Iconv-1.7.tar.gz && cd Text-Iconv-1.7 && perl Makefile.PL && make && make test
+
 WORKDIR /opt/fhem
 
 USER fhem
