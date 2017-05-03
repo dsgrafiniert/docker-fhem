@@ -19,6 +19,7 @@ RUN apk add --update avrdude \
         
 # install perl modules for xmltv
 RUN cpanm LWP::Simple
+RUN cpanm Text::Iconv
 RUN cpanm MIME::Base64
 RUN cpanm HTTP::Request
 RUN cpanm HTML::TableExtract
