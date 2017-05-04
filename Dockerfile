@@ -64,7 +64,7 @@ RUN wget -O /usr/local/bin/speedtest-cli https://raw.githubusercontent.com/sivel
 RUN chmod +x /usr/local/bin/speedtest-cli
 
 RUN wget -O /usr/local/lib/Text-Iconv-1.7.tar.gz http://search.cpan.org/CPAN/authors/id/M/MP/MPIOTR/Text-Iconv-1.7.tar.gz
-RUN cd /usr/local/lib && tar zxvf Text-Iconv-1.7.tar.gz && cd Text-Iconv-1.7 && perl Makefile.PL && make && make test
+RUN cd /usr/local/lib && tar zxvf Text-Iconv-1.7.tar.gz && cd Text-Iconv-1.7 && perl Makefile.PL LIBS='-L/usr/local' && make && make install
 
 WORKDIR /opt/fhem
 
