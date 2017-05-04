@@ -32,8 +32,6 @@ RUN rm -rf libiconv-1.15 && rm libiconv-1.15.tar.gz
         
 # install perl modules for xmltv
 RUN cpanm LWP::Simple
-RUN cpanm InfluxDB::HTTP
-RUN cpanm Method::Signatures
 RUN cpanm MIME::Base64
 RUN cpanm HTTP::Request
 RUN cpanm HTML::TableExtract
