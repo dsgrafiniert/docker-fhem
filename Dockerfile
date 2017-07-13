@@ -13,15 +13,12 @@ RUN apk add --update avrdude \
                      perl-xml-simple \
                      perl-json \
                      perl-net-telnet \
-                     openssh \
-                     sshpass \
                      python \
                      wget \
                      build-base \ 
                      autoconf \
                      re2c \
-                     libtool \
-    && rm -rf /var/cache/apk/*
+                     libtool
 
     # Install GNU libiconv
 
@@ -67,7 +64,9 @@ RUN chmod +x /usr/local/bin/speedtest-cli
 
 RUN wget -O /usr/local/lib/Text-Iconv-1.7.tar.gz http://search.cpan.org/CPAN/authors/id/M/MP/MPIOTR/Text-Iconv-1.7.tar.gz
 RUN cd /usr/local/lib && tar zxvf Text-Iconv-1.7.tar.gz && cd Text-Iconv-1.7 && perl Makefile.PL LIBS='-L/usr/local' && make && make install
-
+RUN apk add --update openssh \
+                     sshpass
+RUN rm -rf /var/cache/apk/*
 WORKDIR /opt/fhem
 
 USER fhem
