@@ -41,6 +41,7 @@ RUN cpanm Date::Parse
 RUN cpanm SOAP::Lite
 RUN cpanm JSON::XS
 RUN cpanm Imager::Color
+RUN cpanm IO::Socket::Multicast
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
