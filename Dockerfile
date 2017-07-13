@@ -14,6 +14,7 @@ RUN apk add --update avrdude \
                      perl-json \
                      perl-net-telnet \
                      python \
+                     sshpass \
                      wget \
                      build-base \ 
                      autoconf \
