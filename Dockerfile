@@ -5,7 +5,6 @@ MAINTAINER Dominik Schoen
 ENV FHEM_VERSION 5.8
 RUN echo "http://1ot.jp/alpine-iot" >> /etc/apk/repositories
 RUN wget -P /etc/apk/keys http://1ot.jp/alpine-iot/keys/takesako@namazu.org-587ad2bb.rsa.pub
-RUN wget -P /tmp https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz && cd /tmp && ls && tar xzvf sispmctl-4.0.tar.gz && cd sispmctl-4.0 && ./configure && make && make install
 
 RUN apk update
 RUN apk add --update avrdude \
@@ -25,6 +24,8 @@ RUN apk add --update avrdude \
                      libtool
 
     # Install GNU libiconv
+
+RUN wget -P /tmp https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz && cd /tmp && ls && tar xzvf sispmctl-4.0.tar.gz && cd sispmctl-4.0 && ./configure && make && make install
 
 RUN mkdir -p /opt 
 RUN cd /opt
