@@ -66,7 +66,7 @@ RUN chmod +x /usr/local/bin/speedtest-cli
 
 RUN wget -O /usr/local/lib/Text-Iconv-1.7.tar.gz http://search.cpan.org/CPAN/authors/id/M/MP/MPIOTR/Text-Iconv-1.7.tar.gz
 RUN cd /usr/local/lib && tar zxf Text-Iconv-1.7.tar.gz && cd Text-Iconv-1.7 && perl Makefile.PL LIBS='-L/usr/local' && make && make install
-RUN wget -O /tmp/sispmctl-4.0.tar.gz https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsispmctl%2Ffiles%2Fsispmctl%2Fsispmctl-4.0%2F&ts=1500116048&use_mirror=kent && cd /tmp && ls && tar xzvf sispmctl-4.0.tar.gz && cd sispmctl-4.0 && ./configure && make && make install
+RUN wget -O /opt/sispmctl-4.0.tar.gz https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fsispmctl%2Ffiles%2Fsispmctl%2Fsispmctl-4.0%2F&ts=1500116048&use_mirror=kent && cd /opt && ls && tar xzvf sispmctl-4.0.tar.gz && cd sispmctl-4.0 && ./configure && make && make install
 
 RUN apk add --update openssh \
                      sshpass
