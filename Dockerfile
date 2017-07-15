@@ -24,7 +24,7 @@ RUN apk add --update avrdude \
                      libtool
 
     # Install GNU libiconv
-
+RUN export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
 RUN wget -P /tmp https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz && cd /tmp && ls && tar xzvf sispmctl-4.0.tar.gz && cd sispmctl-4.0 && ./configure && make && make install
 
 RUN mkdir -p /opt 
