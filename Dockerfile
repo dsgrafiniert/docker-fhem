@@ -14,8 +14,6 @@ RUN apk add --update avrdude \
                      perl-xml-simple \
                      perl-json \
                      perl-net-telnet \
-                     libusb-compat \
-                     libusb-compat-dev \
                      python \
                      wget \
                      build-base \ 
@@ -23,9 +21,6 @@ RUN apk add --update avrdude \
                      re2c \
                      libtool
 
-    # Install GNU libiconv
-RUN export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/lib/pkgconfig"
-RUN wget -P /tmp https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz && cd /tmp && ls && tar xzvf sispmctl-4.0.tar.gz && cd sispmctl-4.0 && ./configure && make && make install
 
 RUN mkdir -p /opt 
 RUN cd /opt
