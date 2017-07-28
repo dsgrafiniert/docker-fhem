@@ -41,6 +41,7 @@ RUN cpanm SOAP::Lite
 RUN cpanm JSON::XS
 RUN cpanm Imager::Color
 RUN cpanm IO::Socket::Multicast
+RUN cpanm RiveScript
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
