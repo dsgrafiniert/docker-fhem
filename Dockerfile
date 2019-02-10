@@ -42,7 +42,8 @@ RUN cpanm JSON::XS
 RUN cpanm Imager::Color
 RUN cpanm IO::Socket::Multicast
 RUN cpanm RiveScript
-RUN cpanm Net::MQTT
+RUN cpanm Net::MQTT::Simple
+RUN cpanm Net::MQTT::Constants
 
 RUN mkdir -p /opt/fhem && \
     addgroup fhem && \
