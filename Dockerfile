@@ -3,7 +3,7 @@ FROM avastsoftware/alpine-perl-extended
 MAINTAINER Dominik Schoen
 
 ENV FHEM_VERSION 5.8
-RUN echo "http://1ot.jp/alpine-iot" >> /etc/apk/repositories
+RUN echo "http://1ot.jp/alpine-iot/v3.5" >> /etc/apk/repositories
 RUN wget -P /etc/apk/keys http://1ot.jp/alpine-iot/keys/takesako@namazu.org-587ad2bb.rsa.pub
 
 RUN apk update
